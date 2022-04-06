@@ -1,6 +1,13 @@
 import 'package:async_redux_project_template/_EXPORT.dart';
 import 'package:flutter/material.dart';
 
+/// We don't want the persistor to start saving stuff while the app is being turned off.
+/// We want to avoid the app to be killed in the middle of saving.
+///
+/// Flutter app lifecycle is confusing, and it's not very clear when is the last chance we have to
+/// save before the app is killed, but here we're pausing the persistor when the app is [paused]
+/// or [detached], and then resume it when the app is [resumed] or [inactive].
+///
 class ProcessLifecycleChange_Action extends AppAction {
   //
   final AppLifecycleState lifecycle;
@@ -10,17 +17,14 @@ class ProcessLifecycleChange_Action extends AppAction {
   @override
   Future<AppState?> reduce() async {
     //
-    if (lifecycle == AppLifecycleState.resumed) {
-      // TODO: Do stuff that needs to be done when the app is resumed.
-      // await dispatch(OpenWebSocket_Action());
-
+    if (lifecycle == AppLifecycleState.resumed || lifecycle == AppLifecycleState.inactive) {
+      // TODO: Put this back for AsyncRedux version 15.1.0
+      // store.resumePersistor();
     }
     //
-    else if (lifecycle == AppLifecycleState.inactive ||
-        lifecycle == AppLifecycleState.paused ||
-        lifecycle == AppLifecycleState.detached) {
-      // TODO: Do stuff that needs to be done when the app is inactive, paused and detached.
-      // dispatch(CloseWebSocket_Action());
+    else if (lifecycle == AppLifecycleState.paused || lifecycle == AppLifecycleState.detached) {
+      // TODO: Put this back for AsyncRedux version 15.1.0
+      // store.pausePersistor();
     }
     //
     else
