@@ -60,10 +60,12 @@ packages:
   async_redux:
     dependency: "direct main"
     description:
-      name: async_redux
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "13.2.2"
+      path: "."
+      ref: "080516fc7906c60731e39b91c30653848a14e2d2"
+      resolved-ref: "080516fc7906c60731e39b91c30653848a14e2d2"
+      url: "https://github.com/marcglasberg/async_redux"
+    source: git
+    version: "14.1.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -168,7 +170,7 @@ packages:
       name: fast_immutable_collections
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "7.2.0"
+    version: "7.2.1"
   ffi:
     dependency: transitive
     description:

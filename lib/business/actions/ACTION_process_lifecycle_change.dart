@@ -17,14 +17,12 @@ class ProcessLifecycleChange_Action extends AppAction {
   @override
   Future<AppState?> reduce() async {
     //
-    if (lifecycle == AppLifecycleState.resumed || lifecycle == AppLifecycleState.inactive) {
-      // TODO: Put this back for AsyncRedux version 15.1.0
-      // store.resumePersistor();
+    if (lifecycle == AppLifecycleState.paused || lifecycle == AppLifecycleState.detached) {
+      store.persistAndPausePersistor();
     }
     //
-    else if (lifecycle == AppLifecycleState.paused || lifecycle == AppLifecycleState.detached) {
-      // TODO: Put this back for AsyncRedux version 15.1.0
-      // store.pausePersistor();
+    else if (lifecycle == AppLifecycleState.resumed || lifecycle == AppLifecycleState.inactive) {
+      store.resumePersistor();
     }
     //
     else

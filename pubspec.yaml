@@ -12,7 +12,12 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  async_redux: ^13.2.2
+
+  async_redux:
+    git:
+      url: https://github.com/marcglasberg/async_redux
+      ref: 080516fc7906c60731e39b91c30653848a14e2d2
+
   intl: 0.17.0
   align_positioned: ^3.0.0
   animated_size_and_fade: ^3.0.0
