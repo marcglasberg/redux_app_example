@@ -15,7 +15,7 @@ class ProcessLifecycleChange_Action extends AppAction {
   ProcessLifecycleChange_Action(this.lifecycle);
 
   @override
-  Future<AppState?> reduce() async {
+  AppState? reduce() {
     //
     if (lifecycle == AppLifecycleState.paused || lifecycle == AppLifecycleState.detached) {
       store.persistAndPausePersistor();

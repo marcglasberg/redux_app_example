@@ -28,14 +28,14 @@ class LoadNumberDescription_Action extends AppAction {
   @override
   Future<AppState?> reduce() async {
     //
-    /// If we already have cached the description for the given number,
-    /// there is no need to download it again.
+    // If we already have cached the description for the given number,
+    // there is no need to download it again.
     if (state.descriptionCache.containsKey(number))
       return null;
     //
     else {
-      /// Given a number, returns a description.
-      /// Throws an error if the description cannot be found, or there is a connection error.
+      // Given a number, returns a description.
+      // Throws an error if the description cannot be found, or there is a connection error.
       Numbers_RESPONSE response = await DAO.loadNumberDescription(number: number);
 
       String description = response.description;

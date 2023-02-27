@@ -11,7 +11,7 @@ class SearchTrivia_Action extends AppAction {
   static int? _parse(String number) => int.tryParse(number);
 
   @override
-  Future<AppState?> reduce() async {
+  AppState? reduce() {
     //
     int? number = this.number;
     if (number == null) throw const UserException('Please, type a valid number.');
