@@ -1,4 +1,5 @@
 import "dart:async";
+
 import 'package:async_redux_project_template/_EXPORT.dart';
 import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
@@ -30,7 +31,7 @@ typedef ButtonBuilder = Widget Function({
 /// the button, through a listener, which is faster than GestureDetector (which has a delay to
 /// differentiate between the various types of gestures).
 ///
-class Button extends StatefulWidget {
+class AppButton extends StatefulWidget {
   //
   static const delayMillis = 75;
 
@@ -57,7 +58,7 @@ class Button extends StatefulWidget {
   /// If [disable] is true, the [onTap] and [onDragUp] won't work.
   final bool disable;
 
-  const Button({
+  const AppButton({
     Key? key,
     required this.builder,
     required this.onTap,
@@ -70,12 +71,12 @@ class Button extends StatefulWidget {
         super(key: key);
 
   @override
-  _ButtonState createState() => _ButtonState();
+  _AppButtonState createState() => _AppButtonState();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class _ButtonState extends State<Button> {
+class _AppButtonState extends State<AppButton> {
   //
   late bool _isPressed;
   late int _keepPressedCount;
@@ -115,7 +116,7 @@ class _ButtonState extends State<Button> {
           //
 
           if (widget.delay)
-            timer = Timer(const Duration(milliseconds: Button.delayMillis), () {
+            timer = Timer(const Duration(milliseconds: AppButton.delayMillis), () {
               if (mounted) setState(start);
             });
           //

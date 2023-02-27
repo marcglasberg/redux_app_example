@@ -2,38 +2,37 @@ name: async_redux_project_template
 description: A Project template using AsyncRedux for state management.
 publish_to: 'none'
 
-version: 1.0.0
+version: 2.0.0
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
 
 dependencies:
+
   flutter:
     sdk: flutter
+
   flutter_localizations:
     sdk: flutter
 
-  async_redux:
-    git:
-      url: https://github.com/marcglasberg/async_redux
-      ref: 080516fc7906c60731e39b91c30653848a14e2d2
-
-  intl: 0.17.0
+  async_redux: ^19.0.0
   align_positioned: ^3.0.0
-  animated_size_and_fade: ^3.0.0
-  matrix4_transform: ^2.0.1
-  fast_immutable_collections: ^7.2.0
-  i18n_extension: ^4.2.0
-  characters: ^1.2.0
-  collection: ^1.15.0
+  animated_size_and_fade: ^3.0.1
+  animations: ^2.0.7
+  assorted_layout_widgets: ^7.0.0
+  characters: ^1.2.1
+  collection: ^1.17.0
   connectivity: ^3.0.6
-  flutter_svg: ^0.23.0
-  assorted_layout_widgets: ^5.5.0
-  themed: ^3.0.0
-  timezone: ^0.8.0
-  weak_map: ^2.0.3
-  animations: ^2.0.1
-  http: ^0.13.4
+  crypto: ^3.0.2
+  fast_immutable_collections: ^9.0.0
+  flutter_svg: ^2.0.2
+  http: ^0.13.5
+  i18n_extension: ^8.0.0
+  intl: 0.17.0
+  matrix4_transform: ^2.0.1
+  themed: ^4.0.0
+  timezone: ^0.9.1
+  weak_map: ^2.1.0
 
 dev_dependencies:
   flutter_test:

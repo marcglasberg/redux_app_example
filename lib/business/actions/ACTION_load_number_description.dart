@@ -50,7 +50,7 @@ class LoadNumberDescription_Action extends AppAction {
   /// we'll wrap that error here as a UserException. This will present a dialog to
   /// the user, explaining the problem.
   @override
-  Object? wrapError(error) {
+  Object? wrapError(error, StackTrace stackTrace) {
     //
     String? errorMsg = (error is DaoGeneralError) ? error.msg : null;
 

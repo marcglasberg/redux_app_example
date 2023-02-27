@@ -49,9 +49,9 @@ class CircleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //
-    return Button(
+    return AppButton(
       onTap: onTap,
-      keepPressed: Button.defaultKeypressed,
+      keepPressed: AppButton.defaultKeypressed,
       builder: ({required bool isPressed}) {
         var child = icon;
 

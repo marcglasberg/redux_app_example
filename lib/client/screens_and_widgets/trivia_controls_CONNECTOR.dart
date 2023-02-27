@@ -1,8 +1,6 @@
 import 'package:async_redux_project_template/_EXPORT.dart';
 import 'package:flutter/material.dart';
 
-import 'trivia_controls_widget.dart';
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class TriviaControls_Connector extends StatelessWidget {

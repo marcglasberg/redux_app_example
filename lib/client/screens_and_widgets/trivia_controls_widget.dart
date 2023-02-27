@@ -54,7 +54,7 @@ class _TriviaControlsState extends State<TriviaControls> {
         onSubmitted: (_) => _onSearch(),
       );
 
-  Widget _randomButton() => RaisedButton(
+  Widget _randomButton() => ElevatedButton(
         child: const Text('Get random trivia'),
         onPressed: () {
           widget.onGetRandomTrivia();
