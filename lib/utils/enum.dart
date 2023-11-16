@@ -1,5 +1,4 @@
 import 'package:async_redux_project_template/_EXPORT.dart';
-import 'package:flutter/foundation.dart';
 
 /// This is useful while we way for:
 /// * https://github.com/dart-lang/language/issues/158
@@ -12,7 +11,7 @@ extension EnumExtension<T> on List<T> {
         (T e) {
           //
           if (e is Enum) {
-            return describeEnum(e).replaceAll("_", "").toUpperCase() ==
+            return e.name.replaceAll("_", "").toUpperCase() ==
                 value.replaceAll("_", "").toUpperCase();
           }
           //
