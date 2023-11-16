@@ -3,8 +3,6 @@ import 'dart:math';
 
 import 'package:async_redux_project_template/_EXPORT.dart';
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 SimBackend get sb => SimBackend.instance;
 
 /// Simulates waiting for the demonstrating with the app.
@@ -15,8 +13,6 @@ Future<void> simulatesWaiting(int millis) {
       ? Future.delayed(Duration(milliseconds: _random.nextInt(20) + 1))
       : Future.delayed(Duration(milliseconds: millis));
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// This is the simulated backend.
 /// It can be user for tests and demonstrations.
@@ -51,5 +47,3 @@ class SimBackend {
     numberDescriptions = {};
   }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////

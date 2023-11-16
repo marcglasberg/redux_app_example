@@ -1,7 +1,7 @@
 import '../dao.dart';
 import 'sim_backend.dart';
 
-abstract class GetInitialAppInfo implements Dao {
+mixin GetInitialAppInfo implements Dao {
   //
   @override
   Future<Numbers_RESPONSE> loadNumberDescription({required int number}) async {

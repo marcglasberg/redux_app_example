@@ -21,8 +21,6 @@ Future<bool> ifHasInternetConnection() async {
   return (result != ConnectivityResult.none);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /// The [ConnectionException] is a type of [UserException] that warns the user when the connection
 /// is not working. Use [ConnectionException.noConnectivity] for a simple version that warns the
 /// users they should check the connection. Use factory [create] to give more complete messages,
@@ -85,5 +83,3 @@ class ConnectionException extends UserException {
         ifThereIsConnection: await ifHasInternetConnection(), host: host, cause: cause);
   }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////

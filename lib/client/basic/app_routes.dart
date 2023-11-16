@@ -2,8 +2,6 @@ import 'package:async_redux_project_template/_EXPORT.dart';
 import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class AppRoutes {
   //
   static Route onGenerateRoute(RouteSettings settings) {

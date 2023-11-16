@@ -2,7 +2,7 @@ import 'package:http/http.dart';
 
 import '../dao.dart';
 
-abstract class GetInitialAppInfo implements Dao {
+mixin GetInitialAppInfo implements Dao {
   //
   static const notFound = 'not-found';
 

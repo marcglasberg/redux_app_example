@@ -1,8 +1,6 @@
 import 'package:async_redux_project_template/_EXPORT.dart';
 import 'package:flutter/material.dart';
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class TriviaControls extends StatefulWidget {
   //
   final VoidCallback onGetRandomTrivia;
@@ -17,8 +15,6 @@ class TriviaControls extends StatefulWidget {
   @override
   _TriviaControlsState createState() => _TriviaControlsState();
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class _TriviaControlsState extends State<TriviaControls> {
   //
@@ -72,5 +68,3 @@ class _TriviaControlsState extends State<TriviaControls> {
     controller.clear();
   }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////

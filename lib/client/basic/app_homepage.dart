@@ -5,8 +5,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:i18n_extension/i18n_widget.dart';
 import 'package:themed/themed.dart';
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class AppHomePage extends StatelessWidget {
   const AppHomePage();
 
@@ -62,8 +60,6 @@ class AppHomePage extends StatelessWidget {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class AppLifecycleManager extends StatefulWidget {
   //
   final Widget child;
@@ -76,8 +72,6 @@ class AppLifecycleManager extends StatefulWidget {
   @override
   _AppLifecycleManagerState createState() => _AppLifecycleManagerState();
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class _AppLifecycleManagerState extends State<AppLifecycleManager> with WidgetsBindingObserver {
   //
@@ -102,8 +96,6 @@ class _AppLifecycleManagerState extends State<AppLifecycleManager> with WidgetsB
   Widget build(BuildContext context) => widget.child;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class AppLocalizations {
   //
   static List<LocalizationsDelegate> get delegates => [
@@ -120,5 +112,3 @@ class AppLocalizations {
     ];
   }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////

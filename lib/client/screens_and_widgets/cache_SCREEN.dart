@@ -1,8 +1,6 @@
 import 'package:async_redux_project_template/_EXPORT.dart';
 import 'package:flutter/material.dart';
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class Cache_Screen extends StatelessWidget with Screen {
   //
   const Cache_Screen();
@@ -21,8 +19,6 @@ class Cache_Screen extends StatelessWidget with Screen {
       );
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class _Factory extends AppVmFactory {
   @override
   _Vm fromStore() => _Vm(
@@ -40,8 +36,6 @@ class _Factory extends AppVmFactory {
       );
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class _Vm extends Vm {
   //
   final IMap<int, String> descriptions;
@@ -56,5 +50,3 @@ class _Vm extends Vm {
     required this.onTapCacheItem,
   }) : super(equals: [descriptions]);
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////

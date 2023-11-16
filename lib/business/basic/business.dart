@@ -37,8 +37,6 @@ class Business {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /// This will be useful soon to unwrap errors thrown by the backend.
 class AppWrapError<St> extends WrapError<St> {
   //
@@ -47,8 +45,6 @@ class AppWrapError<St> extends WrapError<St> {
     return error;
   }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Not doing anything at the moment.
 class AppWrapReduce extends WrapReduce<AppState> {

@@ -5,8 +5,6 @@ import 'package:intl/intl.dart';
 import 'package:intl/number_symbols.dart';
 import 'package:intl/number_symbols_data.dart' show numberFormatSymbols;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /// Given a locale, return the decimal separator.
 /// For example, for en_US it's "." but for pt_BR it's ",".
 String getDecimalSeparator() {
@@ -35,24 +33,16 @@ String getGroupSeparator() {
   return x?.GROUP_SEP ?? ",";
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 void vibrate() => HapticFeedback.vibrate();
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Hides the buildCounter. Use it with TextFields: `buildCounter: textfieldBuildCounterDummy`
 Widget? textfieldCounterDummy(BuildContext context,
         {int? currentLength, int? maxLength, bool? isFocused}) =>
     null;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 @override
 dynamic errorMsgForInvalidObj(Invocation invocation, Object obj) => throw AssertionError(
     'Tried to use invalid object \'${obj.runtimeType}\': ${invocation.memberName}.}');
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 extension StringExtensionNullable on String? {
   bool get isNullOrEmpty => (this == null) || this!.isEmpty;
@@ -65,8 +55,6 @@ extension StringExtensionNullable on String? {
 
   bool get isNotNullOrTrimmedEmpty => (this != null) && this!.trim().isNotEmpty;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 extension StringExtension on String {
   /// Puts non-break spaces in place of normal spaces.
@@ -230,8 +218,6 @@ extension StringExtension on String {
       .toUpperCase();
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 enum Capitalize {
   firstLetterUpper, // All the others unchanged.
   upper, // All uppercase.
@@ -248,12 +234,10 @@ String capitalizeFirstLetter(String text) {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 dynamic getIn(List<String> path, Map<String, dynamic> map) {
   return path.fold(
       map,
-      (previousValue, element) => (previousValue == null || previousValue.runtimeType != Map)
+      (previousValue, element) => (previousValue.runtimeType != Map)
           ? previousValue
-          : (previousValue as Map<String, dynamic>)[element]);
+          : (previousValue)[element]);
 }

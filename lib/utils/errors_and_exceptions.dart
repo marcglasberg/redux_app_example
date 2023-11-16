@@ -2,8 +2,6 @@ import "dart:io";
 
 import "package:async_redux/async_redux.dart";
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /// Used for Bugs.
 class AppError extends AssertionError {
   //
@@ -39,8 +37,6 @@ class AppError extends AssertionError {
   int get hashCode => message.hashCode;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /// Used when something failed but its is NOT an error, and can be recovered from.
 class AppException implements Exception {
   //
@@ -52,8 +48,6 @@ class AppException implements Exception {
   @override
   String toString() => msg.toString();
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Used when something will be implemented in the future.
 class NotYetImplementedError extends AssertionError {
@@ -73,8 +67,6 @@ class NotYetImplementedError extends AssertionError {
   int get hashCode => 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /// Used to stop the control flow, interrupting a process and breaking out of the current code.
 /// This shouldn't be logged nor show any error messages. It also has no stacktrace.
 /// Use with care, only if you know what you are doing, because that's generally an anti-pattern.
@@ -89,8 +81,6 @@ class InterruptControlFlowException {
   @override
   int get hashCode => 0;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// This should be used when validating input.
 class ValidateError extends TypeError {
@@ -111,8 +101,6 @@ class ValidateError extends TypeError {
   @override
   int get hashCode => msg.hashCode;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// UserException that shows in the console.
 /// Used for debugging reasons only, for short periods of time.
@@ -135,5 +123,3 @@ class UserException_ShowInConsole extends UserException {
     );
   }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////

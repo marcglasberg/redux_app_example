@@ -1,8 +1,6 @@
 import 'package:async_redux_project_template/_EXPORT.dart';
 import 'package:flutter/foundation.dart';
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /// This is useful while we way for:
 /// * https://github.com/dart-lang/language/issues/158
 /// When the above issue is implemented we'll change this:
@@ -45,8 +43,6 @@ extension EnumExtension<T> on List<T> {
 //   T? fromOrNull(String? value) => (value == null) ? null : from(value);
 // }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 abstract class Enumerator {
   //
   const Enumerator(this.id);
@@ -68,8 +64,6 @@ abstract class Enumerator {
   Object? describe() => id;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class EnumError extends Error {
   final Enumerator enumerator;
 
@@ -78,5 +72,3 @@ class EnumError extends Error {
   @override
   String toString() => "Enum error: ${enumerator.toString()}";
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////

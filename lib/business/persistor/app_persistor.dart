@@ -5,12 +5,8 @@ import 'package:async_redux/local_persist.dart';
 import 'package:async_redux_project_template/_EXPORT.dart';
 import 'package:flutter/foundation.dart';
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 typedef Json = Map<String, dynamic>;
 typedef JsonList = List<dynamic>;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class AppPersistor extends Persistor<AppState> {
   //

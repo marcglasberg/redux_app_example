@@ -1,8 +1,6 @@
 import 'package:async_redux_project_template/_EXPORT.dart';
 import 'package:flutter/material.dart';
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class TriviaControls_Connector extends StatelessWidget {
   //
   const TriviaControls_Connector();
@@ -19,8 +17,6 @@ class TriviaControls_Connector extends StatelessWidget {
       );
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class _Factory extends AppVmFactory {
   @override
   _Vm fromStore() => _Vm(
@@ -30,8 +26,6 @@ class _Factory extends AppVmFactory {
         onSearchTrivia: (String number) => dispatch(SearchTrivia_Action.from(number)),
       );
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class _Vm extends Vm {
   //
@@ -43,5 +37,3 @@ class _Vm extends Vm {
     required this.onSearchTrivia,
   }) : super(equals: []);
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////

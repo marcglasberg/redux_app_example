@@ -30,8 +30,6 @@ void main() {
     await DAO.init();
   });
 
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-
   test('Loading number description.', () async {
     //
     var store = Store<AppState>(initialState: AppState.initialState());
@@ -67,6 +65,4 @@ void main() {
           20: 'This is a simulated description for number 20!',
         }.lock);
   });
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////
 }

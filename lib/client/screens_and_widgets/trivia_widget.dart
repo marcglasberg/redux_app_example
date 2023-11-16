@@ -1,8 +1,6 @@
 import 'package:async_redux_project_template/_EXPORT.dart';
 import 'package:flutter/material.dart';
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class Trivia_Widget extends StatelessWidget {
   //
   final Wait wait;
@@ -57,8 +55,6 @@ class Trivia_Widget extends StatelessWidget {
       );
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class _TriviaDisplay extends StatelessWidget {
   //
   final int number;
@@ -94,8 +90,6 @@ class _TriviaDisplay extends StatelessWidget {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class _MessageDisplay extends StatelessWidget {
   final String message;
 
@@ -118,8 +112,6 @@ class _MessageDisplay extends StatelessWidget {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class _LoadingWidget extends StatelessWidget {
   const _LoadingWidget({
     Key? key,
@@ -132,4 +124,3 @@ class _LoadingWidget extends StatelessWidget {
     );
   }
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////

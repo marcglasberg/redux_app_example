@@ -4,13 +4,9 @@ import "package:flutter/material.dart";
 
 import '_EXPORT.dart';
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 abstract class ScreenRoute<T> implements Route<Route<T>> {
   Screen get screen;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// To choose the route animation: `SmartRoute.choose(screen)`.
 class SmartRoute {
@@ -46,8 +42,6 @@ class SmartRoute {
     // Main_Screen,
   ];
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class SlideLeftRoute extends CupertinoPageRoute<Route> implements ScreenRoute {
   //
@@ -111,8 +105,6 @@ class SlideLeftRoute extends CupertinoPageRoute<Route> implements ScreenRoute {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /// The route will not visibly change anything for 500 milliseconds,
 /// and then will complete immediately, with no transition.
 /// This is meant to be used with [Navigate_Action.pushAndRemoveAll_DelayedNoAnimationRoute].
@@ -143,8 +135,6 @@ class DelayedNoAnimationRoute extends PageRouteBuilder<Route> implements ScreenR
   String toString() => '${screen.runtimeType}|DelayedNoAnimationRoute';
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class SlideUpRoute extends CupertinoPageRoute<Route> implements ScreenRoute {
   //
   @override
@@ -160,8 +150,6 @@ class SlideUpRoute extends CupertinoPageRoute<Route> implements ScreenRoute {
   @override
   String toString() => '${screen.runtimeType}|SlideUpRoute';
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// This is the default route animation.
 class NoAnimationRoute extends MaterialPageRoute<Route> implements ScreenRoute {
@@ -187,8 +175,6 @@ class NoAnimationRoute extends MaterialPageRoute<Route> implements ScreenRoute {
     return child;
   }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class FadeTransitionRoute extends PageRouteBuilder<Route> implements ScreenRoute {
   //
@@ -227,8 +213,6 @@ class FadeTransitionRoute extends PageRouteBuilder<Route> implements ScreenRoute
   String toString() => '${screen.runtimeType}|FadeTransitionRoute';
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /// Prevents user interaction with the screen for a few milliseconds, while the screen is opening.
 /// This prevents the user to double-click and end-up pressing something in the screen that is
 /// opening.
@@ -241,8 +225,6 @@ class _BarrierRoute extends StatefulWidget {
   @override
   _BarrierRouteState createState() => _BarrierRouteState();
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class _BarrierRouteState extends State<_BarrierRoute> {
   //
@@ -275,5 +257,3 @@ class _BarrierRouteState extends State<_BarrierRoute> {
         child: Container(color: const Color(0x00FFFFFF)),
       );
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
