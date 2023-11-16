@@ -15,7 +15,7 @@ class AppHomePage extends StatelessWidget {
     //
     var navigatorRoutesWrapper = (BuildContext context, Widget? child) {
       return MediaQuery(
-        data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+        data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
         child: Box(
           child: I18n(
             id: I18nWidgetId,
