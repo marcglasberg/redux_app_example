@@ -57,6 +57,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "21.0.1"
+  bdd_framework:
+    dependency: "direct main"
+    description:
+      name: bdd_framework
+      sha256: da18dc5aae5550e227105ba8ed241740d099e7590975745c4fd1b68bfe8c8cbd
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   boolean_selector:
     dependency: transitive
     description:

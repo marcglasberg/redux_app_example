@@ -19,6 +19,7 @@ dependencies:
   align_positioned: ^4.0.0
   animated_size_and_fade: ^3.0.1
   animations: ^2.0.11
+  bdd_framework: ^3.0.1
   assorted_layout_widgets: ^9.0.0
   characters: ^1.3.0
   collection: ^1.17.2
