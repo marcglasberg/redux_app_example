@@ -5,8 +5,8 @@ import 'bdd_loading_description_test.dart' as bdd_loading_description_test;
 
 void main() async {
   BddReporter.set(
-    // Print the result to the console.
-    ConsoleReporter(),
+    // Uncomment to print the result to the console:
+    // ConsoleReporter(),
 
     // Create feature files.
     FeatureFileReporter(clearAllOutputBeforeRun: true),
