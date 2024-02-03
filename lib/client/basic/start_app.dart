@@ -8,9 +8,10 @@ Future<void> startApp(RunConfig runConfig) async {
   //
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Instantiates the Business and the Client layers.
   await Future.wait([
-    Business.init(runConfig), // Business classes, immutable state classes, AsyncRedux/Actions.
-    Client.init(), // Flutter widgets and screens.
+    Business.init(runConfig), // Business layer, like state classes, AsyncRedux/Actions.
+    Client.init(), // Client layer, like Flutter widgets and screens.
   ]);
 
   runApp(const AppHomePage());

@@ -1,7 +1,7 @@
 import "dart:async";
 import "dart:io";
 
-import 'package:async_redux/local_persist.dart';
+import "package:async_redux/local_json_persist.dart";
 import 'package:async_redux_project_template/_EXPORT.dart';
 import 'package:flutter/foundation.dart';
 
@@ -36,7 +36,7 @@ class AppPersistor extends Persistor<AppState> {
           'StackTrace: $stackTrace.\n');
     }
 
-    // If we managed to read the saved that, return it.
+    // If we managed to read the saved state, return it.
     // It will later become the store's initial state.
     if (state != null)
       return state;
@@ -80,14 +80,9 @@ class AppPersistor extends Persistor<AppState> {
   Future<int?> _readNumber() async {
     print('Reading $dbName_Number.db.');
 
-    LocalPersist localPersist = LocalPersist(dbName_Number);
-    List<Object?>? result = await localPersist.load();
-    return (result == null) ||
-            (result.length != 1) ||
-            (result.single is! int) ||
-            (result.single as int < 0)
-        ? null
-        : result.single as int;
+    var localPersist = LocalJsonPersist(dbName_Number);
+    Object? result = await localPersist.load();
+    return (result == null) ? null : result as int;
   }
 
   /// Here I demonstrate throwing an exception if the file does not contain a valid map with
@@ -96,16 +91,15 @@ class AppPersistor extends Persistor<AppState> {
   Future<IMap<int, String>> _readDescriptionCache() async {
     print('Reading $dbName_descriptionCache.db.');
 
-    LocalPersist localPersist = LocalPersist(dbName_descriptionCache);
-    List<Object?>? result = await localPersist.load();
+    var localPersist = LocalJsonPersist(dbName_descriptionCache);
+    Object? result = await localPersist.load();
 
     if (result == null) return const IMapConst({});
 
-    if ((result.length != 1) || (result.single is! Map)) throw AppError();
+    if (result is! Json) throw AppError();
 
     // JSON keys are be strings, by definition, but our map needs int keys.
-    var mapOfStringString = result.single as Map<String, dynamic>;
-    return mapOfStringString
+    return result
         .map((String key, dynamic value) => MapEntry<int, String>(int.parse(key), value as String))
         .lock;
   }
@@ -117,11 +111,11 @@ class AppPersistor extends Persistor<AppState> {
     if (rootDir.existsSync()) await rootDir.delete(recursive: true);
   }
 
-  /// Return the directory `LocalPersist` saves the files and create subdirectories.
+  /// Return the directory that `LocalJsonPersist` saves the files and create subdirectories.
   @visibleForTesting
   Future<Directory> findRootDireForLocalPersist() async {
     // Hack to get the dir, since this info is not shared.
-    var fileInRoot = await LocalPersist("file-in-root").file();
+    var fileInRoot = await LocalJsonPersist("file-in-root").file();
     return fileInRoot.parent;
   }
 
@@ -144,9 +138,8 @@ class AppPersistor extends Persistor<AppState> {
       print('Persisting the number to disk.');
       ifPersisted = true;
 
-      LocalPersist localPersist = LocalPersist(dbName_Number);
-
-      await localPersist.save([newState.number]);
+      var localPersist = LocalJsonPersist(dbName_Number);
+      await localPersist.save(newState.number);
     }
 
     // ---
@@ -163,7 +156,7 @@ class AppPersistor extends Persistor<AppState> {
       print('Persisting the description cache to disk.');
       ifPersisted = true;
 
-      LocalPersist localPersist = LocalPersist(dbName_descriptionCache);
+      var localPersist = LocalJsonPersist(dbName_descriptionCache);
 
       // JSON keys must be strings, by definition.
       IMap<String, String> map = newState.descriptionCache
@@ -171,16 +164,9 @@ class AppPersistor extends Persistor<AppState> {
 
       // TODO: MARCELO Fix the IMap in FIC, so that it's directly serializable, without
       // TODO: having to unlock.
-      await localPersist.save([map.unlock]);
+      await localPersist.save(map.unlock);
     }
 
     if (!ifPersisted) print('It was not necessary to persist the state to disk.');
   }
-
-  @override
-  Future<void> saveInitialState(AppState state) =>
-      persistDifference(lastPersistedState: null, newState: state);
-
-  @override
-  Duration get throttle => const Duration(seconds: 2);
 }
